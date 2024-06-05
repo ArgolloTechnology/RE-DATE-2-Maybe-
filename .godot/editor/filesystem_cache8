@@ -1,7 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1717613137
+::res://::1717614516
 default_bus_layout.tres::AudioBusLayout::6206448488956696379::1717536951::0::1::::<><>::
 icon.svg::CompressedTexture2D::8844327714783460494::1717437939::1717437956::1::::<><>::
+README.md::TextFile::-1::1717613855::0::1::::<><>::
 ::res://assets/::1717455142
 LICENSE & CREDITS.txt::TextFile::-1::1717455142::0::1::::<><>::
 ::res://assets/fonts/::1717444402
@@ -26,8 +27,8 @@ platforms.png::CompressedTexture2D::5550398852022400287::1717444401::1717444402:
 slime_green.png::CompressedTexture2D::8942600667389708478::1717444401::1717444402::1::::<><>::
 slime_purple.png::CompressedTexture2D::728060639081874788::1717444401::1717444402::1::::<><>::
 world_tileset.png::CompressedTexture2D::4685542632913497185::1717444401::1717444402::1::::<><>::
-::res://cenas/::1717544153
-Level.tscn::PackedScene::1565235755505995145::1717544153::0::1::::<><>::uid://doiqa8ce232rn::::res://prefabs/game_manager.tscn<>uid://bktqkjay6n8d2::::res://prefabs/player.tscn<>uid://b70yg5g5wgksf::::res://assets/sprites/world_tileset.png<>uid://41ofpyxam7ph::::res://prefabs/platform.tscn<>uid://c6sclnq8wvh26::::res://prefabs/kill_zone.tscn<>uid://hffhwy14dacu::::res://prefabs/coin.tscn<>uid://chyffmjsh8mp1::::res://prefabs/enemy.tscn<>uid://y2el3p2e3l2x::::res://prefabs/princess.tscn
+::res://cenas/::1717613614
+Level.tscn::PackedScene::1565235755505995145::1717613614::0::1::::<><>::uid://doiqa8ce232rn::::res://prefabs/game_manager.tscn<>uid://bktqkjay6n8d2::::res://prefabs/player.tscn<>uid://b70yg5g5wgksf::::res://assets/sprites/world_tileset.png<>uid://41ofpyxam7ph::::res://prefabs/platform.tscn<>uid://c6sclnq8wvh26::::res://prefabs/kill_zone.tscn<>uid://hffhwy14dacu::::res://prefabs/coin.tscn<>uid://chyffmjsh8mp1::::res://prefabs/enemy.tscn<>uid://y2el3p2e3l2x::::res://prefabs/princess.tscn
 ::res://prefabs/::1717544154
 coin.tscn::PackedScene::501961073566894080::1717544153::0::1::::<><>::uid://dw1laln22njx1::::res://assets/sprites/coin.png<>res://Scripts/coin.gd<>uid://co385bmk3ppd2::::res://assets/sounds/coin.wav
 enemy.tscn::PackedScene::5314021497895165120::1717544153::0::1::::<><>::uid://d0n4ldning71k::::res://assets/sprites/slime_green.png<>res://Scripts/enemy.gd<>uid://c6sclnq8wvh26::::res://prefabs/kill_zone.tscn
