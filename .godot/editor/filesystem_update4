@@ -1,8 +1,15 @@
+res://prefabs/enemy.tscn
+res://Scripts/enemy.gd
 res://cenas/Level.tscn
 res://prefabs/player.tscn
 res://prefabs/platform.tscn
 res://prefabs/coin.tscn
 res://prefabs/kill_zone.tscn
-res://prefabs/enemy.tscn
 res://prefabs/princess.tscn
 res://prefabs/game_manager.tscn
+res://level_1.tscn
+res://cenas/Level0.tscn
+res://Scripts/Princess.gd
+res://cenas/Level_0.tscn
+res://cenas/level_1.tscn
+res://cenas/Level_1.tscn

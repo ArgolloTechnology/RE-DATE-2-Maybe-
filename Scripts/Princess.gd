@@ -15,4 +15,9 @@ func _process(_delta):
 
 
 func _on_body_entered(_body):
-	get_tree().reload_current_scene()
+	var levelName = get_tree().current_scene.name
+	print(levelName)
+	levelName = levelName.split("_", true,2)
+	print(levelName[0])
+	print(levelName[1])
+	get_tree().change_scene_to_file("res://cenas/Level_"+ str(int(levelName[1])+1)+".tscn")
