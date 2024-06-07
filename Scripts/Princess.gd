@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var game_manager = %GameManager
 @onready var sprite = $Sprite
+@onready var animation_player = $Ending/AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,7 +15,10 @@ func _process(_delta):
 	else: sprite.flip_h = true
 
 
-func _on_body_entered(_body):
+func _on_body_entered(body):
+	body.levelEnded = true
+	
+func nextLevel():
 	var levelName = get_tree().current_scene.name
 	print(levelName)
 	levelName = levelName.split("_", true,2)

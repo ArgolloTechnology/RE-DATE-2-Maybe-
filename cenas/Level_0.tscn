@@ -485,7 +485,7 @@ libraries = {
 autoplay = "move"
 
 [node name="Platform2" parent="Map/Platforms" instance=ExtResource("4_sa1uo")]
-position = Vector2(688, 219)
+position = Vector2(688, 221)
 
 [node name="Coins" type="Node" parent="Map"]
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=42 format=3 uid="uid://bktqkjay6n8d2"]
+[gd_scene load_steps=47 format=3 uid="uid://bktqkjay6n8d2"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_qn5ga"]
 [ext_resource type="Texture2D" uid="uid://b1vex0xwwqbud" path="res://assets/sprites/knight.png" id="2_j2g7i"]
 [ext_resource type="AudioStream" uid="uid://b2cty44an17oi" path="res://assets/sounds/jump.wav" id="3_e5asv"]
 [ext_resource type="AudioStream" uid="uid://d3aaq2uk7dq26" path="res://assets/sounds/hurt.wav" id="4_37307"]
+[ext_resource type="Texture2D" uid="uid://dlmnmhqe7a3mk" path="res://assets/sprites/Ending.png" id="5_awiiu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_76uwq"]
 atlas = ExtResource("2_j2g7i")
@@ -259,6 +260,125 @@ scale_max = 3.0
 scale_curve = SubResource("CurveTexture_ck0bg")
 color_ramp = SubResource("GradientTexture1D_stftx")
 
+[sub_resource type="Animation" id="Animation_3gp7h"]
+resource_name = "End"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(20, 20), Vector2(1, 1)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"nextLevel"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_dkqa2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(16, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_cj6md"]
+resource_name = "entry"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(20, 20)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [false],
+"method": &"SetMoviment"
+}, {
+"args": [true],
+"method": &"SetMoviment"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ngkdr"]
+_data = {
+"End": SubResource("Animation_3gp7h"),
+"RESET": SubResource("Animation_dkqa2"),
+"entry": SubResource("Animation_cj6md")
+}
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_qn5ga")
@@ -302,5 +422,17 @@ process_material = SubResource("ParticleProcessMaterial_n4ecx")
 lifetime = 0.5
 one_shot = true
 explosiveness = 1.0
+
+[node name="Ending" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -7)
+scale = Vector2(16, 16)
+texture = ExtResource("5_awiiu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Ending"]
+libraries = {
+"": SubResource("AnimationLibrary_ngkdr")
+}
+autoplay = "entry"
 
 [connection signal="ready" from="." to="." method="_on_ready"]

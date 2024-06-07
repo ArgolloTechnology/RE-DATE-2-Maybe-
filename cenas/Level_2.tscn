@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dfea2x6cxjef5"]
+[gd_scene load_steps=12 format=3 uid="uid://dfea2x6cxjef5"]
 
 [ext_resource type="PackedScene" uid="uid://doiqa8ce232rn" path="res://prefabs/game_manager.tscn" id="1_0mc07"]
 [ext_resource type="Texture2D" uid="uid://b70yg5g5wgksf" path="res://assets/sprites/world_tileset.png" id="2_pn5tc"]
@@ -6,7 +6,6 @@
 [ext_resource type="FontFile" uid="uid://cigsr6l4lyuh1" path="res://assets/fonts/PixelOperator8.ttf" id="4_8swgf"]
 [ext_resource type="PackedScene" uid="uid://y2el3p2e3l2x" path="res://prefabs/princess.tscn" id="4_urxwt"]
 [ext_resource type="PackedScene" uid="uid://bktqkjay6n8d2" path="res://prefabs/player.tscn" id="5_mcc07"]
-[ext_resource type="PackedScene" uid="uid://c38rdu3y5e0f1" path="res://prefabs/Text box.tscn" id="6_5c3lc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7y36"]
 texture = ExtResource("2_pn5tc")
@@ -487,10 +486,6 @@ clip_text = true
 
 [node name="Princess" parent="." instance=ExtResource("4_urxwt")]
 position = Vector2(24, 272)
-
-[node name="TextBox" parent="Princess" instance=ExtResource("6_5c3lc")]
-position = Vector2(37, -25)
-text = "Where are you?"
 
 [node name="Player" parent="." instance=ExtResource("5_mcc07")]
 z_index = 5

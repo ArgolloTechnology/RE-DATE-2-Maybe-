@@ -1,7 +1,9 @@
+AnimationPlayer
+Sprite2D
+Control
+Polygon2D
 Node2D
 MarginContainer
-Control
-AnimationPlayer
 Timer
 Label
 NinePatchRect
@@ -10,5 +12,3 @@ StaticBody2D
 CollisionShape2D
 CharacterBody2D
 AnimatedSprite2D
-Area2D
-GPUParticles2D

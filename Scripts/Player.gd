@@ -25,11 +25,21 @@ var dying = false
 #endregion
 @onready var game_manager = %GameManager
 
+var levelEnded = false
+var canMove = true
+var canJump = true
+@onready var animation_player = $Ending/AnimationPlayer
+
 func _ready():
 	game_manager.player = self
 	if position.x < game_manager.princess.position.x: sprite.flip_h = false
 	else: sprite.flip_h = true
-
+func _process(delta):
+	if levelEnded:
+		sprite.play("idle")
+		canMove = false
+		canJump = false
+		animation_player.play("End")
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -38,7 +48,7 @@ func _physics_process(delta):
 	if alive: 
 
 		# Handle jump.
-		if Input.is_action_just_pressed("Jump") and is_on_floor():
+		if Input.is_action_just_pressed("Jump") and is_on_floor() and canJump:
 			jump_dust.emitting = true
 			velocity.y = JUMP_VELOCITY
 			jump.play()
@@ -52,7 +62,7 @@ func _physics_process(delta):
 			else: sprite.play("idle")
 		else:
 			sprite.play("Jump")
-		if direction:
+		if direction and canMove:
 			velocity.x = direction * SPEED
 			sprite.play("Run")
 			if is_on_floor(): walk_dust.emitting = true
@@ -62,9 +72,20 @@ func _physics_process(delta):
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	else: 
+		canMove = false
 		if !dying: 
 			dying = true
 			hurt.play()
 		sprite.play("Death")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	move_and_slide()
+func SetMoviment(v : bool):
+	canMove = v
+	canJump = v
+func nextLevel():
+	var levelName = get_tree().current_scene.name
+	print(levelName)
+	levelName = levelName.split("_", true,2)
+	print(levelName[0])
+	print(levelName[1])
+	get_tree().change_scene_to_file("res://cenas/Level_"+ str(int(levelName[1])+1)+".tscn")
