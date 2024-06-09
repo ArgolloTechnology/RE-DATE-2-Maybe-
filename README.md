@@ -1,2 +1,2 @@
-# Godot-First-Game
- 
+# RE-DATE 2? Maybe...
+Maybe this will be a upgraded version of RE-DATE
