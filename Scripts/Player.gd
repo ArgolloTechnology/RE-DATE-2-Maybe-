@@ -30,6 +30,11 @@ var canMove = true
 var canJump = true
 @onready var animation_player = $Ending/AnimationPlayer
 
+const dashSpeed = 160
+@onready var dashTimer = $Timer
+var canDash = true
+var dashDir = 1
+
 func _ready():
 	game_manager.player = self
 	if position.x < game_manager.princess.position.x: sprite.flip_h = false
@@ -56,20 +61,28 @@ func _physics_process(delta):
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var direction = Input.get_axis("Left", "Right")
-		if is_on_floor():
-			if direction > 0: sprite.flip_h = false
-			elif direction < 0: sprite.flip_h = true
-			else: sprite.play("idle")
+		if !Input.is_action_just_pressed("dash"):
+			if is_on_floor():
+				if direction > 0: 
+					dashDir = 1
+					sprite.flip_h = false
+				elif direction < 0: 
+					dashDir = -1
+					sprite.flip_h = true
+				else: sprite.play("idle")
+			else:
+				sprite.play("Jump")
+			if canMove:
+				if direction:
+					velocity.x = direction * SPEED
+					sprite.play("Run")
+					if is_on_floor(): walk_dust.emitting = true
+					else: walk_dust.emitting = false
+					
+				else:
+					velocity.x = move_toward(velocity.x, 0, SPEED)
 		else:
-			sprite.play("Jump")
-		if direction and canMove:
-			velocity.x = direction * SPEED
-			sprite.play("Run")
-			if is_on_floor(): walk_dust.emitting = true
-			else: walk_dust.emitting = false
-			
-		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+			dash(dashDir)
 
 	else: 
 		canMove = false
@@ -82,6 +95,7 @@ func _physics_process(delta):
 func SetMoviment(v : bool):
 	canMove = v
 	canJump = v
+	print(v)
 func nextLevel():
 	var levelName = get_tree().current_scene.name
 	print(levelName)
@@ -89,3 +103,11 @@ func nextLevel():
 	print(levelName[0])
 	print(levelName[1])
 	get_tree().change_scene_to_file("res://cenas/Level_"+ str(int(levelName[1])+1)+".tscn")
+	
+func dash(dir):
+	if canDash:
+		dashTimer.start()
+		SetMoviment(false)
+		velocity.x = dashSpeed * dir
+		await dashTimer.is_stopped()
+		SetMoviment(true)
