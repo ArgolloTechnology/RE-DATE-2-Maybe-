@@ -26,14 +26,15 @@ var dying = false
 @onready var game_manager = %GameManager
 
 var levelEnded = false
-var canMove = true
+var canMove = false
 var canJump = true
 @onready var animation_player = $Ending/AnimationPlayer
 
-const dashSpeed = 160
+const dashSpeed = 315
 @onready var dashTimer = $Timer
 var canDash = true
 var dashDir = 1
+var dashing = false
 
 func _ready():
 	game_manager.player = self
@@ -41,6 +42,8 @@ func _ready():
 	else: sprite.flip_h = true
 func _process(delta):
 	if levelEnded:
+		dashing = false
+		velocity.x = 0
 		sprite.play("idle")
 		canMove = false
 		canJump = false
@@ -61,15 +64,9 @@ func _physics_process(delta):
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var direction = Input.get_axis("Left", "Right")
-		if !Input.is_action_just_pressed("dash"):
+		if !Input.is_action_just_pressed("dash") and !dashing:
 			if is_on_floor():
-				if direction > 0: 
-					dashDir = 1
-					sprite.flip_h = false
-				elif direction < 0: 
-					dashDir = -1
-					sprite.flip_h = true
-				else: sprite.play("idle")
+				flip(direction)
 			else:
 				sprite.play("Jump")
 			if canMove:
@@ -78,11 +75,15 @@ func _physics_process(delta):
 					sprite.play("Run")
 					if is_on_floor(): walk_dust.emitting = true
 					else: walk_dust.emitting = false
-					
 				else:
 					velocity.x = move_toward(velocity.x, 0, SPEED)
 		else:
-			dash(dashDir)
+			if canDash: 
+				if direction == 0:
+					dash(dashDir)
+				else: 
+					dash(direction)
+					flip(direction)
 
 	else: 
 		canMove = false
@@ -106,8 +107,23 @@ func nextLevel():
 	
 func dash(dir):
 	if canDash:
-		dashTimer.start()
+		canDash = false
+		dashing = true
+		sprite.play("dash")
 		SetMoviment(false)
 		velocity.x = dashSpeed * dir
-		await dashTimer.is_stopped()
+		gravity = 0
+		velocity.y = 0
+		await sprite.animation_finished
+		dashing = false
+		canDash = true
+		gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 		SetMoviment(true)
+func flip(dir):
+	if dir > 0: 
+		dashDir = 1
+		sprite.flip_h = false
+	elif dir < 0: 
+		dashDir = -1
+		sprite.flip_h = true
+	else: sprite.play("idle")

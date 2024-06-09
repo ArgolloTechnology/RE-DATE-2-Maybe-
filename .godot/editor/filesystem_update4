@@ -1,5 +1,6 @@
-res://cenas/Level_0.tscn
 res://prefabs/player.tscn
+res://Scripts/Player.gd
+res://cenas/Level_0.tscn
 res://prefabs/platform.tscn
 res://prefabs/coin.tscn
 res://prefabs/kill_zone.tscn
@@ -9,4 +10,3 @@ res://prefabs/Text box.tscn
 res://prefabs/enemy.tscn
 res://cenas/Level_3.tscn
 res://prefabs/princess.tscn
-res://Scripts/Player.gd

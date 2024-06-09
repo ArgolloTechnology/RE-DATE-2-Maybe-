@@ -508,7 +508,7 @@ position = Vector2(230, 333)
 shape = SubResource("WorldBoundaryShape2D_bi6ly")
 
 [node name="Princess" parent="." instance=ExtResource("6_0mdvu")]
-position = Vector2(312, 272)
+position = Vector2(409, 272)
 
 [node name="Player" parent="." instance=ExtResource("7_r6dti")]
 z_index = 5
