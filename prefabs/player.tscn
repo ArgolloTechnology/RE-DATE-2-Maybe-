@@ -1,10 +1,12 @@
-[gd_scene load_steps=51 format=3 uid="uid://bktqkjay6n8d2"]
+[gd_scene load_steps=55 format=3 uid="uid://bktqkjay6n8d2"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_qn5ga"]
 [ext_resource type="Texture2D" uid="uid://b1vex0xwwqbud" path="res://assets/sprites/knight.png" id="2_j2g7i"]
 [ext_resource type="AudioStream" uid="uid://b2cty44an17oi" path="res://assets/sounds/jump.wav" id="3_e5asv"]
 [ext_resource type="AudioStream" uid="uid://d3aaq2uk7dq26" path="res://assets/sounds/hurt.wav" id="4_37307"]
 [ext_resource type="Texture2D" uid="uid://dlmnmhqe7a3mk" path="res://assets/sprites/Ending.png" id="5_awiiu"]
+[ext_resource type="AudioStream" uid="uid://5gle5rfkyso6" path="res://assets/sounds/tap.wav" id="5_mn885"]
+[ext_resource type="Script" path="res://prefabs/Trail2D.gd" id="7_l1ylo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_76uwq"]
 atlas = ExtResource("2_j2g7i")
@@ -240,6 +242,14 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_swpf2"]
 radius = 5.0
 
+[sub_resource type="Curve" id="Curve_2afg2"]
+_data = [Vector2(0, 1), 0.0, -1.0, 0, 1, Vector2(1, 0), -1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_f1w54"]
+offsets = PackedFloat32Array(0.39433, 1)
+colors = PackedColorArray(1, 1, 1, 0.560784, 0.486275, 0.466667, 0.435294, 0)
+
 [sub_resource type="Gradient" id="Gradient_5qblu"]
 offsets = PackedFloat32Array(0, 0.299611, 0.700389, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
@@ -326,9 +336,12 @@ tracks/2/path = NodePath("..")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
+"args": [false],
+"method": &"set_movement"
+}, {
 "args": [],
 "method": &"nextLevel"
 }]
@@ -394,14 +407,14 @@ tracks/2/path = NodePath("..")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.1, 1),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [false],
-"method": &"SetMoviment"
+"method": &"set_movement"
 }, {
 "args": [true],
-"method": &"SetMoviment"
+"method": &"set_movement"
 }]
 }
 
@@ -419,10 +432,8 @@ script = ExtResource("1_qn5ga")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_53js2")
-animation = &"dash"
+animation = &"idle"
 autoplay = "idle"
-frame = 3
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
@@ -439,9 +450,21 @@ bus = &"SFX"
 stream = ExtResource("4_37307")
 bus = &"SFX"
 
-[node name="Particles" type="Node2D" parent="."]
+[node name="dash" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("5_mn885")
+bus = &"SFX"
 
-[node name="WalkDust" type="GPUParticles2D" parent="Particles"]
+[node name="Effects" type="Node2D" parent="."]
+
+[node name="Trail2D" type="Line2D" parent="Effects"]
+z_index = 1
+position = Vector2(0, -5)
+width_curve = SubResource("Curve_2afg2")
+gradient = SubResource("Gradient_f1w54")
+end_cap_mode = 2
+script = ExtResource("7_l1ylo")
+
+[node name="WalkDust" type="GPUParticles2D" parent="Effects"]
 z_index = 6
 emitting = false
 amount = 2
@@ -449,7 +472,7 @@ process_material = SubResource("ParticleProcessMaterial_fk0m2")
 lifetime = 0.2
 one_shot = true
 
-[node name="JumpDust" type="GPUParticles2D" parent="Particles"]
+[node name="JumpDust" type="GPUParticles2D" parent="Effects"]
 z_index = 6
 emitting = false
 amount = 6
