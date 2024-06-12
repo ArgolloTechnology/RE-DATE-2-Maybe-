@@ -133,4 +133,5 @@ func flip(direction):
 func nextLevel():
 	var levelName = get_tree().current_scene.name
 	levelName = levelName.split("_", true,2)
-	get_tree().change_scene_to_file("res://cenas/Level_"+ str(int(levelName[1])+1)+".tscn")
+	var next = get_tree().change_scene_to_file("res://cenas/Level_"+ str(int(levelName[1])+1)+".tscn")
+	if next: get_tree().change_scene_to_file("res://cenas/Level_1.tscn") 
