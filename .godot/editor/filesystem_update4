@@ -1,3 +1,6 @@
+res://cenas/Level_6.tscn
+res://Label_blue.tres
+res://Scripts/Player.gd
 res://cenas/Level_0.tscn
 res://prefabs/player.tscn
 res://prefabs/platform.tscn
@@ -8,6 +11,4 @@ res://cenas/Level_2.tscn
 res://prefabs/Text box.tscn
 res://prefabs/enemy.tscn
 res://cenas/Level_3.tscn
-res://Scripts/Player.gd
 res://cenas/Level_5.tscn
-res://Label_blue.tres

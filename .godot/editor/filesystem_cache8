@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1718211386
+::res://::1718304399
 default_bus_layout.tres::AudioBusLayout::6206448488956696379::1717536951::0::1::::<><>::
 icon.svg::CompressedTexture2D::8844327714783460494::1717437939::1717437956::1::::<><>::
-Label_blue.tres::LabelSettings::1074743521164432170::1718136564::0::1::::<><>::uid://cigsr6l4lyuh1::::res://assets/fonts/PixelOperator8.ttf
+Label_blue.tres::LabelSettings::1074743521164432170::1718300102::0::1::::<><>::uid://cigsr6l4lyuh1::::res://assets/fonts/PixelOperator8.ttf
 README.md::TextFile::-1::1717955062::0::1::::<><>::
 ::res://assets/::1717455142
 LICENSE & CREDITS.txt::TextFile::-1::1717455142::0::1::::<><>::
@@ -30,23 +30,24 @@ slime_green.png::CompressedTexture2D::8942600667389708478::1717444401::171744440
 slime_purple.png::CompressedTexture2D::728060639081874788::1717444401::1717444402::1::::<><>::
 TextBox.png::CompressedTexture2D::2115326336429761720::1717700090::1717700092::1::::<><>::
 world_tileset.png::CompressedTexture2D::4685542632913497185::1717444401::1717444402::1::::<><>::
-::res://cenas/::1718212379
-Level_0.tscn::PackedScene::1565235755505995145::1718212378::0::1::::<><>::uid://doiqa8ce232rn::::res://prefabs/game_manager.tscn<>uid://b70yg5g5wgksf::::res://assets/sprites/world_tileset.png<>uid://hffhwy14dacu::::res://prefabs/coin.tscn<>uid://41ofpyxam7ph::::res://prefabs/platform.tscn<>uid://c6sclnq8wvh26::::res://prefabs/kill_zone.tscn<>uid://y2el3p2e3l2x::::res://prefabs/princess.tscn<>uid://bktqkjay6n8d2::::res://prefabs/player.tscn<>uid://chyffmjsh8mp1::::res://prefabs/enemy.tscn<>uid://cigsr6l4lyuh1::::res://assets/fonts/PixelOperator8.ttf
-Level_1.tscn::PackedScene::5740484438276447268::1718212379::0::1::::<><>::uid://doiqa8ce232rn::::res://prefabs/game_manager.tscn<>uid://b70yg5g5wgksf::::res://assets/sprites/world_tileset.png<>uid://c6sclnq8wvh26::::res://prefabs/kill_zone.tscn<>uid://cigsr6l4lyuh1::::res://assets/fonts/PixelOperator8.ttf<>uid://y2el3p2e3l2x::::res://prefabs/princess.tscn<>uid://bktqkjay6n8d2::::res://prefabs/player.tscn
-Level_2.tscn::PackedScene::7518513252769091728::1718212379::0::1::::<><>::uid://doiqa8ce232rn::::res://prefabs/game_manager.tscn<>uid://b70yg5g5wgksf::::res://assets/sprites/world_tileset.png<>uid://c6sclnq8wvh26::::res://prefabs/kill_zone.tscn<>uid://cigsr6l4lyuh1::::res://assets/fonts/PixelOperator8.ttf<>uid://y2el3p2e3l2x::::res://prefabs/princess.tscn<>uid://bktqkjay6n8d2::::res://prefabs/player.tscn
-Level_3.tscn::PackedScene::6116327770848161308::1718212379::0::1::::<><>::uid://doiqa8ce232rn::::res://prefabs/game_manager.tscn<>uid://b70yg5g5wgksf::::res://assets/sprites/world_tileset.png<>uid://c6sclnq8wvh26::::res://prefabs/kill_zone.tscn<>uid://cigsr6l4lyuh1::::res://assets/fonts/PixelOperator8.ttf<>uid://y2el3p2e3l2x::::res://prefabs/princess.tscn<>uid://bktqkjay6n8d2::::res://prefabs/player.tscn
+::res://cenas/::1718301624
+Level_0.tscn::PackedScene::1565235755505995145::1718301623::0::1::::<><>::uid://doiqa8ce232rn::::res://prefabs/game_manager.tscn<>uid://b70yg5g5wgksf::::res://assets/sprites/world_tileset.png<>uid://hffhwy14dacu::::res://prefabs/coin.tscn<>uid://41ofpyxam7ph::::res://prefabs/platform.tscn<>uid://c6sclnq8wvh26::::res://prefabs/kill_zone.tscn<>uid://y2el3p2e3l2x::::res://prefabs/princess.tscn<>uid://bktqkjay6n8d2::::res://prefabs/player.tscn<>uid://chyffmjsh8mp1::::res://prefabs/enemy.tscn<>uid://cigsr6l4lyuh1::::res://assets/fonts/PixelOperator8.ttf
+Level_1.tscn::PackedScene::5740484438276447268::1718301623::0::1::::<><>::uid://doiqa8ce232rn::::res://prefabs/game_manager.tscn<>uid://b70yg5g5wgksf::::res://assets/sprites/world_tileset.png<>uid://c6sclnq8wvh26::::res://prefabs/kill_zone.tscn<>uid://cigsr6l4lyuh1::::res://assets/fonts/PixelOperator8.ttf<>uid://y2el3p2e3l2x::::res://prefabs/princess.tscn<>uid://bktqkjay6n8d2::::res://prefabs/player.tscn
+Level_2.tscn::PackedScene::7518513252769091728::1718301623::0::1::::<><>::uid://doiqa8ce232rn::::res://prefabs/game_manager.tscn<>uid://b70yg5g5wgksf::::res://assets/sprites/world_tileset.png<>uid://c6sclnq8wvh26::::res://prefabs/kill_zone.tscn<>uid://cigsr6l4lyuh1::::res://assets/fonts/PixelOperator8.ttf<>uid://y2el3p2e3l2x::::res://prefabs/princess.tscn<>uid://bktqkjay6n8d2::::res://prefabs/player.tscn
+Level_3.tscn::PackedScene::6116327770848161308::1718301623::0::1::::<><>::uid://doiqa8ce232rn::::res://prefabs/game_manager.tscn<>uid://b70yg5g5wgksf::::res://assets/sprites/world_tileset.png<>uid://c6sclnq8wvh26::::res://prefabs/kill_zone.tscn<>uid://cigsr6l4lyuh1::::res://assets/fonts/PixelOperator8.ttf<>uid://y2el3p2e3l2x::::res://prefabs/princess.tscn<>uid://bktqkjay6n8d2::::res://prefabs/player.tscn
 Level_4.tscn::PackedScene::2421563328524414378::1718137629::0::1::::<><>::uid://doiqa8ce232rn::::res://prefabs/game_manager.tscn<>uid://b70yg5g5wgksf::::res://assets/sprites/world_tileset.png<>uid://c6sclnq8wvh26::::res://prefabs/kill_zone.tscn<>uid://pku4skg0kony::::res://Label_blue.tres<>uid://y2el3p2e3l2x::::res://prefabs/princess.tscn<>uid://bktqkjay6n8d2::::res://prefabs/player.tscn
-Level_5.tscn::PackedScene::2482908140008740989::1718212500::0::1::::<><>::uid://doiqa8ce232rn::::res://prefabs/game_manager.tscn<>uid://b70yg5g5wgksf::::res://assets/sprites/world_tileset.png<>uid://c6sclnq8wvh26::::res://prefabs/kill_zone.tscn<>uid://pku4skg0kony::::res://Label_blue.tres<>uid://y2el3p2e3l2x::::res://prefabs/princess.tscn<>uid://bktqkjay6n8d2::::res://prefabs/player.tscn
-::res://prefabs/::1718212379
-coin.tscn::PackedScene::501961073566894080::1718212378::0::1::::<><>::uid://dw1laln22njx1::::res://assets/sprites/coin.png<>res://Scripts/coin.gd<>uid://co385bmk3ppd2::::res://assets/sounds/coin.wav
-enemy.tscn::PackedScene::5314021497895165120::1718212379::0::1::::<><>::uid://d0n4ldning71k::::res://assets/sprites/slime_green.png<>res://Scripts/enemy.gd<>uid://c6sclnq8wvh26::::res://prefabs/kill_zone.tscn
+Level_5.tscn::PackedScene::2482908140008740989::1718301623::0::1::::<><>::uid://doiqa8ce232rn::::res://prefabs/game_manager.tscn<>uid://b70yg5g5wgksf::::res://assets/sprites/world_tileset.png<>uid://c6sclnq8wvh26::::res://prefabs/kill_zone.tscn<>uid://pku4skg0kony::::res://Label_blue.tres<>uid://y2el3p2e3l2x::::res://prefabs/princess.tscn<>uid://bktqkjay6n8d2::::res://prefabs/player.tscn
+Level_6.tscn::PackedScene::4271237688871039073::1718301624::0::1::::<><>::uid://doiqa8ce232rn::::res://prefabs/game_manager.tscn<>uid://b70yg5g5wgksf::::res://assets/sprites/world_tileset.png<>uid://c6sclnq8wvh26::::res://prefabs/kill_zone.tscn<>uid://pku4skg0kony::::res://Label_blue.tres<>uid://y2el3p2e3l2x::::res://prefabs/princess.tscn<>uid://bktqkjay6n8d2::::res://prefabs/player.tscn
+::res://prefabs/::1718301623
+coin.tscn::PackedScene::501961073566894080::1718301623::0::1::::<><>::uid://dw1laln22njx1::::res://assets/sprites/coin.png<>res://Scripts/coin.gd<>uid://co385bmk3ppd2::::res://assets/sounds/coin.wav
+enemy.tscn::PackedScene::5314021497895165120::1718301623::0::1::::<><>::uid://d0n4ldning71k::::res://assets/sprites/slime_green.png<>res://Scripts/enemy.gd<>uid://c6sclnq8wvh26::::res://prefabs/kill_zone.tscn
 game_manager.tscn::PackedScene::8159394092507616843::1717700836::0::1::::<><>::res://Scripts/GameManager.gd
-kill_zone.tscn::PackedScene::6985996106506794105::1718212378::0::1::::<><>::res://Scripts/kill_zone.gd
+kill_zone.tscn::PackedScene::6985996106506794105::1718301623::0::1::::<><>::res://Scripts/kill_zone.gd
 music.tscn::PackedScene::4016199815900253122::1717527799::0::1::::<><>::uid://dsfgtivislyng::::res://assets/music/time_for_adventure.mp3
-platform.tscn::PackedScene::2090010079947830341::1718212378::0::1::::<><>::uid://clcwi1pdbutln::::res://assets/sprites/platforms.png
-player.tscn::PackedScene::3128522101066450141::1718212378::0::1::::<><>::res://Scripts/Player.gd<>uid://b1vex0xwwqbud::::res://assets/sprites/knight.png<>uid://b2cty44an17oi::::res://assets/sounds/jump.wav<>uid://d3aaq2uk7dq26::::res://assets/sounds/hurt.wav<>uid://dlmnmhqe7a3mk::::res://assets/sprites/Ending.png<>uid://5gle5rfkyso6::::res://assets/sounds/tap.wav<>res://prefabs/Trail2D.gd
+platform.tscn::PackedScene::2090010079947830341::1718301623::0::1::::<><>::uid://clcwi1pdbutln::::res://assets/sprites/platforms.png
+player.tscn::PackedScene::3128522101066450141::1718301623::0::1::::<><>::res://Scripts/Player.gd<>uid://b1vex0xwwqbud::::res://assets/sprites/knight.png<>uid://b2cty44an17oi::::res://assets/sounds/jump.wav<>uid://d3aaq2uk7dq26::::res://assets/sounds/hurt.wav<>uid://dlmnmhqe7a3mk::::res://assets/sprites/Ending.png<>uid://5gle5rfkyso6::::res://assets/sounds/tap.wav<>res://prefabs/Trail2D.gd
 princess.tscn::PackedScene::1740534453435497113::1718136614::0::1::::<><>::res://Scripts/Princess.gd<>uid://cw8t4fcehceq0::::res://assets/sprites/guinevere_.png<>uid://dlmnmhqe7a3mk::::res://assets/sprites/Ending.png
-Text box.tscn::PackedScene::6807292096246079144::1718212379::0::1::::<><>::res://Scripts/Text box.gd<>uid://5exd601x5gb5::::res://assets/sprites/TextBox.png<>res://Scripts/TextHolder.gd<>uid://cigsr6l4lyuh1::::res://assets/fonts/PixelOperator8.ttf
+Text box.tscn::PackedScene::6807292096246079144::1718301623::0::1::::<><>::res://Scripts/Text box.gd<>uid://5exd601x5gb5::::res://assets/sprites/TextBox.png<>res://Scripts/TextHolder.gd<>uid://cigsr6l4lyuh1::::res://assets/fonts/PixelOperator8.ttf
 Trail2D.gd::GDScript::-1::1718133852::0::1::::<>Line2D<>::
 ::res://Scripts/::1718212371
 coin.gd::GDScript::-1::1717544127::0::1::::<>Area2D<>::

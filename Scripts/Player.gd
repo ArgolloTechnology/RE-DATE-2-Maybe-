@@ -41,7 +41,7 @@ func _ready():
 	game_manager.player = self
 	sprite.flip_h = position.x >= game_manager.princess.position.x
 
-func _process(delta):
+func _process(_delta):
 	if levelEnded:
 		handle_level_end()
 	
@@ -132,6 +132,8 @@ func flip(direction):
 
 func nextLevel():
 	var levelName = get_tree().current_scene.name
-	levelName = levelName.split("_", true,2)
-	var next = get_tree().change_scene_to_file("res://cenas/Level_"+ str(int(levelName[1])+1)+".tscn")
-	if next: get_tree().change_scene_to_file("res://cenas/Level_1.tscn") 
+	levelName = levelName.split("_", true, 2)
+	var path = "res://cenas/Level_" + str(int(levelName[1]) + 1) + ".tscn"
+	if FileAccess.file_exists(path): get_tree().change_scene_to_file(path)
+	else: get_tree().change_scene_to_file("res://cenas/Level_1.tscn")
+
