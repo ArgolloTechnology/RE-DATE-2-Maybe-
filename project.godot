@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 
 Music="*res://prefabs/music.tscn"
 
+[display]
+
+window/size/resizable=false
+window/stretch/mode="viewport"
+
 [input]
 
 Right={

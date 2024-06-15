@@ -111,9 +111,9 @@ func perform_dash(direction):
 		velocity.y = 0
 		await sprite.animation_finished
 		dashing = false
-		canDash = true
 		gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 		set_movement(true)
+		dashTimer.start()
 		trail_2d.visible = false
 
 func set_movement(value):
@@ -137,3 +137,5 @@ func nextLevel():
 	if FileAccess.file_exists(path): get_tree().change_scene_to_file(path)
 	else: get_tree().change_scene_to_file("res://cenas/Level_1.tscn")
 
+func _on_timer_timeout():
+	canDash = true
