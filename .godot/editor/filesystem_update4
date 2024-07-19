@@ -1,16 +1,5 @@
 res://cenas/Level_0.tscn
 res://Label_blue.tres
-res://prefabs/player.tscn
-res://prefabs/platform.tscn
-res://prefabs/coin.tscn
-res://prefabs/kill_zone.tscn
-res://cenas/Level_1.tscn
-res://cenas/Level_2.tscn
-res://prefabs/Text box.tscn
-res://prefabs/enemy.tscn
-res://cenas/Level_7.tscn
-res://cenas/Level_6.tscn
-res://cenas/Level_5.tscn
-res://cenas/Level_4.tscn
-res://cenas/Level_3.tscn
 res://cenas/Level_8.tscn
+res://prefabs/Door.tscn
+res://prefabs/princess.tscn
