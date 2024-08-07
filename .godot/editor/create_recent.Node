@@ -1,8 +1,9 @@
-StaticBody2D
+Timer
 CollisionShape2D
+Area2D
+StaticBody2D
 AnimatedSprite2D
 Line2D
-Timer
 AnimationPlayer
 Sprite2D
 Control
@@ -11,4 +12,3 @@ Node2D
 MarginContainer
 Label
 NinePatchRect
-Node
