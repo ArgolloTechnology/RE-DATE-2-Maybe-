@@ -1,9 +1,11 @@
-res://cenas/Level_0.tscn
-res://Label_blue.tres
-res://Scripts/enemy.gd
-res://Scripts/GameManager.gd
 res://cenas/Level_8.tscn
+res://Label_blue.tres
 res://prefabs/Door.tscn
 res://prefabs/princess.tscn
 res://prefabs/player.tscn
 res://prefabs/coin.tscn
+res://cenas/Level_9.tscn
+res://cenas/Level_0.tscn
+res://prefabs/key.tscn
+res://Scripts/key.gd
+res://Scripts/Player.gd

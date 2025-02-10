@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://d3aaq2uk7dq26" path="res://assets/sounds/hurt.wav" id="4_37307"]
 [ext_resource type="Texture2D" uid="uid://dlmnmhqe7a3mk" path="res://assets/sprites/Ending.png" id="5_awiiu"]
 [ext_resource type="AudioStream" uid="uid://5gle5rfkyso6" path="res://assets/sounds/tap.wav" id="5_mn885"]
-[ext_resource type="Script" path="res://prefabs/Trail2D.gd" id="7_l1ylo"]
+[ext_resource type="Script" path="res://Scripts/Trail2D.gd" id="7_l1ylo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_76uwq"]
 atlas = ExtResource("2_j2g7i")
@@ -497,5 +497,10 @@ autoplay = "entry"
 wait_time = 0.25
 one_shot = true
 
+[node name="coyoteTime" type="Timer" parent="."]
+wait_time = 2.685
+one_shot = true
+
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="coyoteTime" to="." method="_on_timer_timeout"]

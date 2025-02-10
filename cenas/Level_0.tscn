@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://wkhg7cilw0f2"]
+[gd_scene load_steps=18 format=3 uid="uid://wkhg7cilw0f2"]
 
 [ext_resource type="PackedScene" uid="uid://doiqa8ce232rn" path="res://prefabs/game_manager.tscn" id="1_g44bc"]
 [ext_resource type="Texture2D" uid="uid://b70yg5g5wgksf" path="res://assets/sprites/world_tileset.png" id="2_x62wu"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bktqkjay6n8d2" path="res://prefabs/player.tscn" id="7_r6dti"]
 [ext_resource type="PackedScene" uid="uid://chyffmjsh8mp1" path="res://prefabs/enemy.tscn" id="8_8icqm"]
 [ext_resource type="FontFile" uid="uid://cigsr6l4lyuh1" path="res://assets/fonts/PixelOperator8.ttf" id="9_fn6kf"]
+[ext_resource type="PackedScene" uid="uid://by8871l34ymje" path="res://prefabs/key.tscn" id="10_kflud"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7y36"]
 texture = ExtResource("2_x62wu")
@@ -302,3 +303,6 @@ offset_right = 301.0
 offset_bottom = 220.0
 text = "use A and D to move"
 label_settings = SubResource("LabelSettings_tn7rf")
+
+[node name="Key" parent="." instance=ExtResource("10_kflud")]
+position = Vector2(232, 264)

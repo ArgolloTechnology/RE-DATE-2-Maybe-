@@ -57,8 +57,7 @@ func handle_level_end():
 	dashing = false
 	velocity.x = 0
 	sprite.play("idle")
-	canMove = false
-	canJump = false
+	set_movement(false)
 	animation_player.play("End")
 
 func apply_gravity(delta):
@@ -67,10 +66,14 @@ func apply_gravity(delta):
 		jump_dust.emitting = false
 
 func handle_movement():
-	if Input.is_action_just_pressed("Jump") and is_on_floor() and canJump:
-		jump_dust.emitting = true
-		velocity.y = JUMP_VELOCITY
-		jump.play()
+	if canJump:
+		var coyote_time: Timer = $coyoteTime
+		if !is_on_floor(): 
+			coyote_time.start()
+		if Input.is_action_just_pressed("Jump") and (is_on_floor() || coyote_time.time_left > 0):
+			jump_dust.emitting = true
+			velocity.y = JUMP_VELOCITY
+			jump.play()
 
 	var direction = Input.get_axis("Left", "Right")
 	if !Input.is_action_just_pressed("dash") and !dashing:
