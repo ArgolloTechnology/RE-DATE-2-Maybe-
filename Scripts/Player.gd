@@ -29,6 +29,7 @@ var levelEnded = false
 var canMove = true
 var canJump = true
 var canDash = true
+var coyote = true
 var dashDir = 1
 var dashing = false
 
@@ -36,12 +37,16 @@ var dashing = false
 @onready var animation_player = $Ending/AnimationPlayer
 @onready var dashTimer = $Timer
 
+@onready var coyote_time: Timer = $coyoteTime
+
 func _ready():
 	trail_2d.visible = false
 	game_manager.player = self
 	sprite.flip_h = position.x >= game_manager.princess.position.x
 
 func _process(_delta):
+	print(coyote_time.time_left)
+	print(coyote_time.wait_time)
 	if levelEnded:
 		handle_level_end()
 	
@@ -66,14 +71,18 @@ func apply_gravity(delta):
 		jump_dust.emitting = false
 
 func handle_movement():
+	if is_on_floor():
+		coyote = true
+		
 	if canJump:
-		var coyote_time: Timer = $coyoteTime
-		if !is_on_floor(): 
+		if !is_on_floor() && coyote_time.time_left == 0 && coyote: 
 			coyote_time.start()
 		if Input.is_action_just_pressed("Jump") and (is_on_floor() || coyote_time.time_left > 0):
 			jump_dust.emitting = true
 			velocity.y = JUMP_VELOCITY
 			jump.play()
+			coyote_time.stop()
+			coyote = false
 
 	var direction = Input.get_axis("Left", "Right")
 	if !Input.is_action_just_pressed("dash") and !dashing:
@@ -122,6 +131,8 @@ func perform_dash(direction):
 func set_movement(value):
 	canMove = value
 	canJump = value
+	if value:
+		coyote_time.stop()
 
 func flip(direction):
 	if direction > 0:
@@ -142,3 +153,7 @@ func nextLevel():
 
 func _on_timer_timeout():
 	canDash = true
+
+
+func _on_coyote_time_timeout() -> void:
+	coyote = false

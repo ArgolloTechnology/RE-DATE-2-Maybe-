@@ -7,5 +7,4 @@ res://prefabs/coin.tscn
 res://cenas/Level_9.tscn
 res://cenas/Level_0.tscn
 res://prefabs/key.tscn
-res://Scripts/key.gd
 res://Scripts/Player.gd
