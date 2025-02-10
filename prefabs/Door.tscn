@@ -65,6 +65,7 @@ size = Vector2(3, 16)
 size = Vector2(7, 14)
 
 [node name="Door" type="AnimatedSprite2D"]
+z_index = 1
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_s0mx6")
 autoplay = "closed"
