@@ -42,4 +42,3 @@ func _on_player_detection_body_entered(body):
 		await sprite.animation_finished
 		canMove = true
 		sprite.play("Idle")
-
