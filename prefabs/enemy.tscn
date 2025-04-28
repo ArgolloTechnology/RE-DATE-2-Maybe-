@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://chyffmjsh8mp1"]
 
 [ext_resource type="Texture2D" uid="uid://d0n4ldning71k" path="res://assets/sprites/slime_green.png" id="1_mx587"]
-[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_yx7ft"]
+[ext_resource type="Script" uid="uid://b47ju1mj3frks" path="res://Scripts/enemy.gd" id="1_yx7ft"]
 [ext_resource type="PackedScene" uid="uid://c6sclnq8wvh26" path="res://prefabs/kill_zone.tscn" id="2_8cpam"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_avghm"]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://c38rdu3y5e0f1"]
 
-[ext_resource type="Script" path="res://Scripts/Text box.gd" id="1_5k625"]
+[ext_resource type="Script" uid="uid://pfw5oi20c2fl" path="res://Scripts/Text box.gd" id="1_5k625"]
 [ext_resource type="Texture2D" uid="uid://5exd601x5gb5" path="res://assets/sprites/TextBox.png" id="1_afwh4"]
-[ext_resource type="Script" path="res://Scripts/TextHolder.gd" id="1_qr6l8"]
+[ext_resource type="Script" uid="uid://cvhgbbgyvxluu" path="res://Scripts/TextHolder.gd" id="1_qr6l8"]
 [ext_resource type="FontFile" uid="uid://cigsr6l4lyuh1" path="res://assets/fonts/PixelOperator8.ttf" id="2_v5qmd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6ibi1"]
@@ -164,8 +164,8 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gkxau"]
 _data = {
-"RESET": SubResource("Animation_1l8fw"),
-"entry": SubResource("Animation_nm1o5")
+&"RESET": SubResource("Animation_1l8fw"),
+&"entry": SubResource("Animation_nm1o5")
 }
 
 [node name="TextBox" type="Node2D"]

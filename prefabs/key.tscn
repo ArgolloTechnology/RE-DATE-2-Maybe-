@@ -1,6 +1,6 @@
 [gd_scene load_steps=34 format=3 uid="uid://by8871l34ymje"]
 
-[ext_resource type="Script" path="res://Scripts/key.gd" id="1_1emhi"]
+[ext_resource type="Script" uid="uid://e3ltics0kb0u" path="res://Scripts/key.gd" id="1_1emhi"]
 [ext_resource type="Texture2D" uid="uid://bax6avx3l4qjn" path="res://assets/sprites/key.png" id="1_6hx5s"]
 [ext_resource type="AudioStream" uid="uid://co385bmk3ppd2" path="res://assets/sounds/coin.wav" id="2_dgp4s"]
 
@@ -291,9 +291,9 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_46hur"]
 _data = {
-"RESET": SubResource("Animation_3vjn1"),
-"idle": SubResource("Animation_oetmo"),
-"pickup": SubResource("Animation_5wkrq")
+&"RESET": SubResource("Animation_3vjn1"),
+&"idle": SubResource("Animation_oetmo"),
+&"pickup": SubResource("Animation_5wkrq")
 }
 
 [node name="Key" type="Area2D"]
@@ -312,7 +312,7 @@ frame_progress = 0.525707
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_46hur")
+&"": SubResource("AnimationLibrary_46hur")
 }
 autoplay = "idle"
 

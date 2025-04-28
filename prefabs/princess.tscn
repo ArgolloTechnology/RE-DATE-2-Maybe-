@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://y2el3p2e3l2x"]
 
-[ext_resource type="Script" path="res://Scripts/Princess.gd" id="1_65p6r"]
+[ext_resource type="Script" uid="uid://deaxlpehvbkpw" path="res://Scripts/Princess.gd" id="1_65p6r"]
 [ext_resource type="Texture2D" uid="uid://cw8t4fcehceq0" path="res://assets/sprites/guinevere_.png" id="1_ykj4g"]
 [ext_resource type="Texture2D" uid="uid://dlmnmhqe7a3mk" path="res://assets/sprites/Ending.png" id="3_dyger"]
 
@@ -157,9 +157,9 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ngkdr"]
 _data = {
-"End": SubResource("Animation_3gp7h"),
-"RESET": SubResource("Animation_dkqa2"),
-"entry": SubResource("Animation_cj6md")
+&"End": SubResource("Animation_3gp7h"),
+&"RESET": SubResource("Animation_dkqa2"),
+&"entry": SubResource("Animation_cj6md")
 }
 
 [node name="Princess" type="Area2D"]
@@ -184,7 +184,7 @@ texture = ExtResource("3_dyger")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Ending"]
 libraries = {
-"": SubResource("AnimationLibrary_ngkdr")
+&"": SubResource("AnimationLibrary_ngkdr")
 }
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
